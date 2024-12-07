@@ -1,0 +1,226 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "South Bronx Script",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "South Bronx Script🔫",
+   LoadingSubtitle = "by Bray",
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "South Bronx",
+      Subtitle = "Key System",
+      Note = "https://loot-link.com/s?90bb6f29", -- Use this to tell the user how to get a key
+      FileName = "SouthBronx24", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/QiGsjyNP"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+Rayfield:Notify({
+   Title = "Script Has Been Executed!",
+   Content = "Thanks For Using!",
+   Duration = 3.5,
+   Image = nil,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed (not working fixes soon)",
+   Range = {16, 100},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 0,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "JumpPower (not working fixes soon)",
+   Range = {50, 300},
+   Increment = 1,
+   Suffix = "Jump",
+   CurrentValue = 0,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Fly GUI V3",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()              
+   end,
+})
+
+local AimTab = Window:CreateTab("Aimbot", nil) -- Title, Image
+local AimSection = AimTab:CreateSection("Aimbot")
+
+local Button = AimTab:CreateButton({
+   Name = "CamLock (e)",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wsefwefwefwef/we/refs/heads/main/wwwwwww"))()
+   end,
+})
+
+local Button = AimTab:CreateButton({
+   Name = "Instant Interact",
+   Callback = function()
+        for i,v in ipairs(game:GetService("Workspace"):GetDescendants()) do
+ if v.ClassName == "ProximityPrompt" then
+  v.HoldDuration = 0
+ end
+end 
+   end,
+})
+
+local EspTab = Window:CreateTab("Esp", nil) -- Title, Image
+local EspSection = EspTab:CreateSection("Esp")
+
+local Button = EspTab:CreateButton({
+   Name = "Name & Health Esp",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wsefwefwefwef/NameEsp2/refs/heads/main/NameEsp2"))()
+   end,
+})
+
+local Button = EspTab:CreateButton({
+   Name = "Invertory Esp (dont use with show guns, glitchy)",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wsefwefwefwef/moreEsp/refs/heads/main/moreEsp"))()
+   end,
+})
+
+local Button = EspTab:CreateButton({
+   Name = "Show Guns GUI",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SergiuPro211/SouthCottonFREE/main/ShowGuns"))()
+   end,
+})
+
+local MiscTab = Window:CreateTab("Misc", nil) -- Title, Image
+local MiscSection = MiscTab:CreateSection("Misc")
+
+local Button = MiscTab:CreateButton({
+   Name = "Delete Tool (z)",
+   Callback = function()
+        --[[     
+ 
+█▀█ █▀▀ ▄▀█ █▀▄   █▄▄ █▀▀ █▀▀ █▀█ █▀█ █▀▀   █░█ █▀ █ █▄░█ █▀▀
+█▀▄ ██▄ █▀█ █▄▀   █▄█ ██▄ █▀░ █▄█ █▀▄ ██▄   █▄█ ▄█ █ █░▀█ █▄█
+ 
+ 
+Before you will be using this script to exploit in the game, read this.
+ 
+I am NOT responsible for any bans or kicks that occured while your cheating session and YOU gotta be responsible for that.
+Any bans are NOT my fault and you can't accuse me of banning you because YOU are using these cheats and YOU are chosing this way through your gameplay.
+ 
+HOW TO USE:
+ 
+1. Run your script executor.
+2. Paste the ENTIRE script into the executor.
+3. Inject and run.
+4. Press Z to remove objects. (You can change the key below.)
+5. Enjoy!
+ 
+ 
+--]]
+--[[
+ 
+█▀▀ █▀█ █▀▀ █▀▄ █ ▀█▀ █▀
+█▄▄ █▀▄ ██▄ █▄▀ █ ░█░ ▄█
+ 
+ 
+███╗░░░███╗░█████╗░██████╗░███████╗  ██████╗░██╗░░░██╗
+████╗░████║██╔══██╗██╔══██╗██╔════╝  ██╔══██╗╚██╗░██╔╝
+██╔████╔██║███████║██║░░██║█████╗░░  ██████╦╝░╚████╔╝░
+██║╚██╔╝██║██╔══██║██║░░██║██╔══╝░░  ██╔══██╗░░╚██╔╝░░
+██║░╚═╝░██║██║░░██║██████╔╝███████╗  ██████╦╝░░░██║░░░
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═════╝░╚══════╝  ╚═════╝░░░░╚═╝░░░
+ 
+███████╗██████╗░██╗░░██╗██╗░░░██╗██╗
+██╔════╝██╔══██╗██║░██╔╝╚██╗░██╔╝██║
+█████╗░░██████╔╝█████═╝░░╚████╔╝░██║
+██╔══╝░░██╔══██╗██╔═██╗░░░╚██╔╝░░╚═╝
+███████╗██║░░██║██║░╚██╗╗░░██║░░░██╗
+╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝
+ 
+--]]
+ 
+local player = game.Players.LocalPlayer
+local deleteButton = Enum.KeyCode.Z -- DELETE BUTTON
+local UIM = game.UserInputService
+local mouse = player:GetMouse()
+ 
+mouse.Move:Connect(function()
+    if game.Workspace:FindFirstChild("DestroySelectionBox") then
+        game.Workspace:FindFirstChild("DestroySelectionBox"):Destroy()
+    end
+    if mouse.Target then
+        if mouse.Target:IsA("Part") or mouse.Target:IsA("MeshPart") then
+            local box = Instance.new("SelectionBox")
+            box.Color3 = Color3.new(255,255,255)
+            box.LineThickness = 0.1
+            box.SurfaceTransparency = 0.99
+            box.SurfaceColor3 = Color3.new(255,255,255)
+            box.Transparency = 0
+            box.Adornee = mouse.Target
+            box.Parent = game.Workspace
+            box.Name = "DestroySelectionBox"
+        end
+    end
+end)
+ 
+UIM.InputBegan:Connect(function(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == deleteButton then
+            delete()
+        end
+    end
+end)
+    
+function delete()
+    if mouse.Target then
+        if mouse.Target:IsA("Part") or mouse.Target:IsA("MeshPart") then
+            mouse.Target:Destroy()
+        end
+    end
+end
+   end,
+})
+
+local Button = MiscTab:CreateButton({
+   Name = "IY Admin",
+   Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+   end,
+})
+
+local Button = MiscTab:CreateButton({
+   Name = "Noclip GUI",
+   Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/wsefwefwefwef/noclip/refs/heads/main/noclip'),true))()
+   end,
+})
